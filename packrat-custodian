@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while true; do
+  inotifywait -q -e close_write .
+  packrat compress-logs --verbose $@
+done
